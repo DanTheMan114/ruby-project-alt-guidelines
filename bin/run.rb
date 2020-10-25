@@ -194,18 +194,23 @@ end
         #     puts ""
         # end
 
+        def real_reviews
+
+        end
 
 
-    def real_reviews
-        member = gets.chomp
-        member.reviews.select{|review|
-        puts "member_id #{review.member_id}"
-        puts "movie_id #{review.movie_id}"
-        puts "rating #{review.rating}"
-        puts "comments #{review.comments}"
-        puts"***********************"
-    }
-    end
+
+
+    # def real_reviews
+    #     member = gets.chomp
+    #     member.reviews.select{|review| review|
+    #     puts "member_id #{review.member_id}"
+    #     puts "movie_id #{review.movie_id}"
+    #     puts "rating #{review.rating}"
+    #     puts "comments #{review.comments}"
+    #     puts"***********************"
+    # }
+    # end
 #(member_id: daniel.id, movie_id: titanic.id, rating: 4, comments:"Best one out!!" )
 
 
