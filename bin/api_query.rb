@@ -3,7 +3,6 @@ require 'json'
 require 'pry'
 
 
-
 def login
     puts "**********************************************"
     puts "Enter your name you used to make your account!"
@@ -22,6 +21,6 @@ def login
         puts "#{member} WHO ARE YOU?? Just kidding no worries we logged you in enjoy!"
         puts "----------------------------------------------------------------------"
         @member = Member.find_or_create_by(name: member)
-        menu2
+        menu
     end
 end

@@ -1,6 +1,9 @@
 class CLI
 
     def menu
+        Member.destroy_all
+        Movie.destroy_all
+        Review.destroy_all
         puts "*************************"
         puts "Welcome to Spoiled Tomato"
         puts "*************************"
@@ -13,19 +16,19 @@ class CLI
         puts "4. Update Review"
         puts "5. Delete Account"
         puts "6. Exit"
-    
-    
-        if get_user_input == "login"
+
+        input = get_user_input
+        if input == "login"
             login
-        elsif get_user_input == "read my review"
+        elsif input == "read my review"
             read_review
-        elsif get_user_input == "write a review"
+        elsif input == "write a review"
             write_review
-        elsif get_user_input == "update review"
+        elsif input == "update review"
             update_review
-        elsif get_user_input == "delete account"
+        elsif input == "delete account"
             delete_account
-        elsif get_user_input == "exit"
+        elsif input == "exit"
             puts "*********************"
             puts "Smh YOU WILL BE BACK!"
             puts "*********************"
@@ -38,6 +41,8 @@ class CLI
         end
     
     end
+
+    
 
     def get_user_input
         gets.chomp.downcase
