@@ -101,7 +101,7 @@ end
             puts "?????-----------------------------------------------------------------"
             puts "#{member} WHO ARE YOU?? Just kidding no worries we logged you in enjoy!"
             puts "----------------------------------------------------------------------"
-            @member = Member.find_or_create_by(name: member)
+            @member = Member.create(name: member)
             menu2
         end
     end
@@ -118,7 +118,7 @@ end
         if 
             member = Member.find_by(name: input)
             member.destroy
-            puts "Your name and Reviews were never here oops."
+            puts "#{input} and its Reviews were deleted!"
         else
             puts '<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>'
             puts "Sorry '#{input}' is not in our date base. Try again or create a new account."
@@ -142,6 +142,9 @@ end
             puts "====================="
             puts "Make a new slection!"
             puts "===================="
+        else 
+            puts "Cant seem so fine #{name} in out date base, try again or login!"
+            menu
             
         end
 
@@ -178,19 +181,25 @@ end
         puts "**********************************************"
         name = gets.chomp
         if Member.find_by(name: name)
-            @member = Member.find_or_create_by(name: name)
+            @member = Member.find_by(name: name)
             puts "*********************"
             puts "Welcome Back, #{name}! \n"
             puts "====================="
             puts "Make a new slection!"
             puts "===================="
             menu2
+        else 
+            puts "Sorry, was not able to to find #{name} in date base, try again or login in with the correct name."
+            menu
         end
          
     end
 
     def read_my_review2(member)
-        real_reviews
+        
+        puts "Here are #{member}'s reviews."
+        puts"[][][][][][][][][][[][][][][][]"
+        
     end
 
             
@@ -264,7 +273,7 @@ end
             menu2
         else
             puts "****************************************************"
-            puts "Sorry you dont have any reviews on that movie title!"
+            puts "Sorry you dont have any reviews for #{movie_name}!"
             puts "****************************************************"
             update_review2
         end

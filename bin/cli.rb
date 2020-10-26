@@ -31,7 +31,7 @@ class CLI
             delete_account
         elsif input == "exit"
             puts "*********************"
-            puts "Smh YOU WILL BE BACK!"
+            puts "SMH YOU WILL BE BACK!"
             puts "*********************"
         else
             puts "***********************"
