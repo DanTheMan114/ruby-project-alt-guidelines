@@ -22,7 +22,8 @@ titanic = Movie.create(title: "Titanic", genre: "Romance", year: 1997)
 star_wars_the_force_awakens = Movie.create(title: "Star Wars The Force Awakens", genre: "Science fiction", year: 2015)
 avengers_infinity_war = Movie.create(title: "Avengers Infinity War", genre: "Action", year: 2018)
 
-
+daniel_review = Review.create(member_id: daniel.id, movie_id: star_wars_the_force_awakens.id, rating: 5, comments:"Must watch/see!!" )
+daniel_review = Review.create(member_id: daniel.id, movie_id: avatar.id, rating: 5, comments:"I thought i was cool" )
 daniel_review = Review.create(member_id: daniel.id, movie_id: titanic.id, rating: 4, comments:"Best one out!!" )
 tyana_review = Review.create(member_id: tyana.id, movie_id: avengers_endgame.id, rating: 5, comments:"I love marvel.")
 ary_review = Review.create(member_id: ary.id, movie_id: avatar.id, rating: 3, comments:"Its okay or whatever.")

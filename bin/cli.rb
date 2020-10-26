@@ -8,15 +8,7 @@ class CLI
         # Review.destroy_all
 
         welcome
-
-        puts "~Please make a selection~"
-    
-        puts "1. Login"
-        puts "2. Read my Reviews"
-        puts "3. Write a Review"
-        puts "4. Update Review"
-        puts "5. Delete Account"
-        puts "6. Exit"
+        options
 
         input = get_user_input
         if input == "login"
@@ -27,16 +19,14 @@ class CLI
             write_review
         elsif input == "update review"
             update_review
+        elsif input == "random review"
+            random_review
         elsif input == "delete account"
             delete_account
         elsif input == "exit"
-            puts "*********************"
-            puts "SMH YOU WILL BE BACK!"
-            puts "*********************"
+            brb
         else
-            puts "***********************"
-            puts "Sorry didnt catch that."
-            puts "***********************"
+            didnt_catch
             self.menu
     
         end
