@@ -3,13 +3,6 @@ require 'json'
 require 'pry'
 
 
-def welcome 
-    puts "**************************"
-    puts "Welcome to Spoiled Tomato!"
-    puts "**************************"
-end
-
-
 def menu
     options
 
@@ -166,6 +159,7 @@ end
 
 
 def read_my_review2
+
 end
 
 def random_review
@@ -232,6 +226,12 @@ def log_again
         selection
         menu2
     end
+end
+
+def welcome 
+    puts "**************************"
+    puts "Welcome to Spoiled Tomato!"
+    puts "**************************"
 end
 
 def enter_sign

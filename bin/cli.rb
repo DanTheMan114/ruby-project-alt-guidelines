@@ -6,7 +6,6 @@ class CLI
         # Member.destroy_all
         # Movie.destroy_all
         # Review.destroy_all
-
         welcome
         options
 
