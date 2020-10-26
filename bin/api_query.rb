@@ -6,45 +6,10 @@ require 'pry'
 
 
 def welcome 
-    puts "*************************"
-    puts "Welcome to Spoiled Tomato"
-    puts "*************************"
+    puts "**************************"
+    puts "Welcome to Spoiled Tomato!"
+    puts "**************************"
 end
-
-def menu2
-
-    puts "~Please make a selection~"
-
-    puts "1. Read my Review"
-    puts "2. Write a Review"
-    puts "3. Update Review"
-    puts "4. Delete Account"
-    puts "5. Exit"
-
-    user_input = gets.chomp
-
-    if user_input.downcase == "read my review"
-        read_my_review2
-    elsif user_input.downcase == "write a review"
-        write_review2
-    elsif user_input.downcase == "update review"
-        update_review2
-    elsif user_input.downcase == "delete account"
-        delete_account
-    elsif user_input.downcase == "exit"
-        puts "*********************"
-        puts "Smh YOU WILL BE BACK!"
-        puts "*********************"
-    else
-        puts "***********************"
-        puts "Sorry didnt catch that."
-        puts "***********************"
-        menu2
-
-    end
-
-end
-
 
 
 def menu
@@ -82,6 +47,45 @@ def menu
     end
 
 end
+
+
+def menu2
+
+    puts "~Please make a selection~"
+
+    puts "1. Read my Review"
+    puts "2. Write a Review"
+    puts "3. Update Review"
+    puts "4. Delete Account"
+    puts "5. Exit"
+
+    user_input = gets.chomp
+
+    if user_input.downcase == "read my review"
+        read_my_review2
+    elsif user_input.downcase == "write a review"
+        write_review2
+    elsif user_input.downcase == "update review"
+        update_review2
+    elsif user_input.downcase == "delete account"
+        delete_account
+    elsif user_input.downcase == "exit"
+        puts "*********************"
+        puts "Smh YOU WILL BE BACK!"
+        puts "*********************"
+    else
+        puts "***********************"
+        puts "Sorry didnt catch that."
+        puts "***********************"
+        menu2
+
+    end
+
+end
+
+
+
+
 
 
     def login
@@ -194,42 +198,18 @@ end
         end
          
     end
-
+# Member.all.select{|mem|mem.name == "Dan"} = get "Dan" Member 
     def read_my_review2
         puts "[][][][][][][][][][][][][][][]"
-        puts "Here are #{} reviews."
+        rand_one = Review.all.each{|review|review}.sample
+        rand_two = Movie.all.each{|mov|mov.title}.sample
+        rand_three = Member.all.each{|mem|mem.name}.sample
+        puts "Member: #{rand_three.name}"
+        puts "Movie: #{rand_two.title}"
+        puts "Rating: #{rand_one.rating}"
+        puts "Comments: '#{rand_one.comments}'"
         puts "[][][][][][][][][][][][][][][]"
-        
-        
     end
-
-            
-        # else
-        #     puts ""
-        #     puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-        #     puts "Sorry, there is no user with that name, try again?"
-        #     puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
-        #     puts ""
-        # end
-
-        def real_reviews
-
-        end
-
-
-
-
-#     def real_reviews
-#         member = gets.chomp
-#         member.reviews.select{|review| review|
-#         puts "member_id #{review.member_id}"
-#         puts "movie_id #{review.movie_id}"
-#         puts "rating #{review.rating}"
-#         puts "comments #{review.comments}"
-#         puts"***********************"
-#     }
-#     end
-# (member_id: daniel.id, movie_id: titanic.id, rating: 4, comments:"Best one out!!" )
 
 
     def update_review # make a randome review pop up
@@ -279,3 +259,26 @@ end
             update_review2
         end
     end
+
+
+    # else
+        #     puts ""
+        #     puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+        #     puts "Sorry, there is no user with that name, try again?"
+        #     puts "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"
+        #     puts ""
+        # end
+
+
+
+#     def real_reviews
+#         member = gets.chomp
+#         member.reviews.select{|review| review|
+#         puts "member_id #{review.member_id}"
+#         puts "movie_id #{review.movie_id}"
+#         puts "rating #{review.rating}"
+#         puts "comments #{review.comments}"
+#         puts"***********************"
+#     }
+#     end
+# (member_id: daniel.id, movie_id: titanic.id, rating: 4, comments:"Best one out!!" )

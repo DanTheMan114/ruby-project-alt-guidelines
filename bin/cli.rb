@@ -44,12 +44,9 @@ class CLI
     end
 
 
-
-
     def get_user_input
         gets.chomp.downcase
     end
     
-
 
 end
