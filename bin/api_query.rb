@@ -185,7 +185,7 @@ end
             puts "*********************"
             puts "Welcome Back, #{name}! \n"
             puts "====================="
-            puts "Make a new slection!"
+            puts "Make a slection!"
             puts "===================="
             menu2
         else 
@@ -195,10 +195,11 @@ end
          
     end
 
-    def read_my_review2(member)
+    def read_my_review2
+        puts "[][][][][][][][][][][][][][][]"
+        puts "Here are #{} reviews."
+        puts "[][][][][][][][][][][][][][][]"
         
-        puts "Here are #{member}'s reviews."
-        puts"[][][][][][][][][][[][][][][][]"
         
     end
 
