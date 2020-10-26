@@ -12,6 +12,11 @@ Final Projcet Mod 1 From Daniel Turner
 ## Contributors 
 Daniel 
 
+## Basic INFO
+
+Well this application name is Spoiled Tomato. A user is able to see their reviews, write reviews and see a radom review as well. 
+
+
 
 
 ## Goal / Requirements 
