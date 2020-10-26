@@ -43,7 +43,7 @@ def menu2
     user_input = gets.chomp
 
     if user_input.downcase == "read my review"
-        read_my_review2
+        read_review2
     elsif user_input.downcase == "write a review"
         write_review2
     elsif user_input.downcase == "update review"
@@ -136,19 +136,21 @@ def write_review2
         puts "-----------------------------------------------------------------"
         menu2
     end
+end ##must do a roll back to get the year and genre to the new review
+
+def read_review
+    
 end
 
 
-
-def read_review # make a randome review pop up
+def read_review2 # make a randome review pop up
     enter_sign
     name = gets.chomp
     if Member.find_by(name: name)
         @member = Member.find_by(name: name)
         puts "*********************"
         puts "Welcome Back, #{name}! \n"
-        selection
-        menu2
+        get_user(name)
     else 
         puts "Sorry, was not able to to find #{name} in date base, try again or login in with the correct name."
         menu
@@ -156,13 +158,68 @@ def read_review # make a randome review pop up
      
 end
 
+#     private
+
+#     def member_params
+#         params.require(:name).permit(:member_id)
+#     end
 
 
-def read_my_review2
+# def index
+#     @member = Member.all
+# end
 
+# def show
+#     @member = Member.find(params[:id])
+# end
+
+# def new
+#     @member = Member.new
+# end
+
+
+
+
+ 
+# def read_my_review2
+#     #puts 'profile name one more time'
+#     #name = gets.chomp
+#     #get_user(name)
+# end
+
+def get_user(member_name)
+    member = Member.find_by(name: member_name)
+    if member
+        puts "~~~~~~~~~~~~~~~~~~~~~~"
+        puts 'Here are your Reviews!'
+        puts "~~~~~~~~~~~~~~~~~~~~~~"
+        show_reviews(member)
+    else
+        options
+    end
 end
 
+
+    def show_reviews(member)
+        
+        member.movies.each{|movie|
+            puts "Title: '#{movie.title}'"
+            puts "Genre: '#{movie.genre}'"
+            puts "Year: '#{movie.year}'"
+            #puts "====================="
+        }
+        # member.reviews.each{|review|
+        #     puts "Rating: '#{review.rating}'"
+        #     puts "Comments: '#{review.comments}' "
+        #     puts "====================="
+        # }
+    end
+
+
+
+
 def random_review
+    #puts Review.all.sample
     puts "[][][][][][][][][][][][][][][]"
     rand_one = Review.all.each{|review|review}.sample
     rand_two = Movie.all.each{|mov|mov.title}.sample
@@ -272,7 +329,3 @@ def options
     puts "6. Delete Account"
     puts "7. Exit"
 end
-
-
-
-
