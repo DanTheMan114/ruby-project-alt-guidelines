@@ -101,7 +101,7 @@ def write_review
     enter_sign
     name = gets.chomp
     if Member.find_by(name: name)
-        @member = Member.find_or_create_by(name: name)
+        @member = Member.find_by(name: name)
         puts "*********************"
         puts "Welcome Back, #{name}! \n"
         selection
