@@ -139,12 +139,12 @@ def write_review2
 end ##must do a roll back to get the year and genre to the new review
 
 def read_review
-    
+    enter_sign
+    read_review2
 end
 
 
 def read_review2 # make a randome review pop up
-    enter_sign
     name = gets.chomp
     if Member.find_by(name: name)
         @member = Member.find_by(name: name)
