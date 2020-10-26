@@ -256,9 +256,9 @@ end
             puts "++++++++++++++++++++++++++++++++++++"
             menu2
         else
-            puts "**********************"
-            puts "Sorry incorrect enrty!"
-            puts "**********************"
+            puts "****************************************************"
+            puts "Sorry you dont have any reviews on that movie title!"
+            puts "****************************************************"
             update_review2
         end
     end
