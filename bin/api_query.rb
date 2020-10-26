@@ -115,9 +115,16 @@ end
         puts"Enter your name so we can delete it!!"
         puts"**************************************"
         input = gets.chomp
-        member = Member.find_by(name: input)
-        member.destroy
-        puts "Your name and Reviews were never here oops."
+        if 
+            member = Member.find_by(name: input)
+            member.destroy
+            puts "Your name and Reviews were never here oops."
+        else
+            puts '<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>'
+            puts "Sorry '#{input}' is not in our date base. Try again or create a new account."
+            puts '<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>'
+
+        end
         menu
     end
 
