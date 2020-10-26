@@ -265,5 +265,10 @@ end
 welcome
 menu
 
+cli = CLI.new
+cli.main_menu
+
+
+
 
 #puts "Bang!!! Bang!!!"
