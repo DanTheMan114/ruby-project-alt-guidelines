@@ -6,3 +6,4 @@ require_all 'lib'
 
 ActiveRecord::Base.logger = nil
 
+require_relative '../bin/api_query'
